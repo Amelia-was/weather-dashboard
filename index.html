@@ -4,42 +4,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
         integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="
         crossorigin="anonymous" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
-        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
-        <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link
-            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Shade&family=Hammersmith+One&family=Righteous&display=swap"
-            rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Shade&family=Hammersmith+One&family=Righteous&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>☀ Weather</title>
 </head>
 
 <body>
-    <header>
-        <span class="header-sun">☀</span>
+    <header class="p-3 d-flex flex-row align-items-center">
+        <span class="oi oi-sun sun-header display-1 mr-3"></span>
+        <div class="flex-column">
         <h1>Sunshine Cities</h1>
         <h2>Quickly check the weather in any city!</h2>
+        </div>
     </header>
 
-    <div class="flex-container flex-dir-column large-flex-dir-row">
+    <div class="container-fluid">
+        <div class="row h-100">
 
-        <menu class="flex-container flex-dir-column">
-            <p class="">Type the name of a city to see current weather data!</p>
-            <input type="text" class="">
-        </menu>
+            <menu class="col-3 p-2 h-100">
+                <p class="">Type the name of a city to see current weather data!</p>
+                <div class="d-flex flex-row">
+                    <input type="text" class="">
+                    <button>
+                        <span class="oi oi-magnifying-glass"></span>
+                    </button>
 
-        <main class="">
-            <h3>Today's Weather:</h3>
-            <div class="today">
-                Cloudy with a chance of meatballs
-            <span class="oi oi-sun"></span>
-            </div>
-            <h4>5 Day Forecast</h4>
-        </main>
+                </div>
+            </menu>
+
+            <main class="col-lg p-2">
+                <h3 class="p-2">Today's Weather:</h3>
+                <div class="today card rounded-3">
+                    <div class="card-body">
+                        <p class="card-text">Cloudy with a chance of meatballs</p>
+                        <span class="oi oi-sun"></span>
+                    </div>
+                </div>
+                <h4 class="p-2">5 Day Forecast</h4>
+            </main>
+
+        </div>
 
     </div>
 
