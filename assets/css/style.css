@@ -13,7 +13,7 @@ font-family: 'Righteous', cursive;
 
 :root  {
     --reddish: #e84855;
-    --blue: #3185fc;
+    --blue: #7f8bd0;
     --yellow: #f9dc5c;
     --darkBlue: #403f4c;
     --lightBlue: #c7e8f3;
@@ -60,7 +60,12 @@ h4 {
 }
 
 menu {
-    background: var(--blue);
+    background: var(--blue) !important;
+    height: 100vw;
+}
+
+.container-fluid {
+    height: 100vw;
 }
 
 .today {
@@ -72,5 +77,6 @@ menu {
     color: var(--yellow);
 }
 
-.sun-header {
+.flex-fill {
+    flex: 1;
 }
