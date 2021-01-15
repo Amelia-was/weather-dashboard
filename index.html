@@ -1,14 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/open-iconic/1.1.1/font/css/open-iconic-bootstrap.min.css"
+        integrity="sha512-UyNhw5RNpQaCai2EdC+Js0QL4RlVmiq41DkmCJsRV3ZxipG2L0HhTqIf/H9Hp8ez2EnFlkBnjRGJU2stW3Lj+w=="
+        crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/foundation-sites@6.6.3/dist/css/foundation.min.css"
+        integrity="sha256-ogmFxjqiTMnZhxCqVmcqTvjfe1Y/ec4WaRj/aQPvn+I=" crossorigin="anonymous">
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link
+            href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Shade&family=Hammersmith+One&family=Righteous&display=swap"
+            rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>☀ Weather</title>
 </head>
 
 <body>
-    
-<script src="/assets/js/script.js"></script>
+    <header>
+        <span class="header-sun">☀</span>
+        <h1>Sunshine Cities</h1>
+        <h2>Quickly check the weather in any city!</h2>
+    </header>
+
+    <div class="flex-container flex-dir-column large-flex-dir-row">
+
+        <menu class="flex-container flex-dir-column">
+            <p class="">Type the name of a city to see current weather data!</p>
+            <input type="text" class="">
+        </menu>
+
+        <main class="">
+            <h3>Today's Weather:</h3>
+            <div class="today">
+                Cloudy with a chance of meatballs
+            <span class="oi oi-sun"></span>
+            </div>
+            <h4>5 Day Forecast</h4>
+        </main>
+
+    </div>
+
+
+    <script src="/assets/js/script.js"></script>
 </body>
+
 </html>
