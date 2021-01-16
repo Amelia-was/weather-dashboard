@@ -1,6 +1,23 @@
+// global variables
+var searchHistoryEl = $("#search-history");
+
+// get search history from localStorage and display on page
+var searchHistory = JSON.parse(localStorage.getItem("search"));
+if (!searchHistory) {
+    searchHistory = []
+}
+else {
+    for (let i = 0; i < searchHistory.length; i++) {
+        var cityListItemEl = $("<li></li>");
+        cityListItemEl.addClass("list-group-item");
+        cityListItemEl.text(searchHistory[i]);
+        $(searchHistoryEl).append(cityListItemEl);
+    }
+}
+
 // search
-$("#search").on("click", function () {
-    var cityName = $("#city-name").val();
+var fetchWeather = function (searchTerm) {
+    var cityName = searchTerm;
     fetch("https://api.openweathermap.org/data/2.5/weather?&units=metric&q=" 
     + cityName + "&appid=61c9307a53a9d97b2af0939528ef8c0b")
     .then(function(response) {
@@ -21,6 +38,14 @@ $("#search").on("click", function () {
     })
     .then(function(response) {
         $("#city").text(cityName);
+        var cityListItemEl = $("<li class='list-group-item'></li>");
+        cityListItemEl.text(cityName);
+        $(searchHistoryEl).append(cityListItemEl);
+        searchHistory.push(cityName);
+        localStorage.setItem("search", JSON.stringify(searchHistory));
+
+        $("#today-in").removeClass("d-none");
+        $("#5-day-fcast").removeClass("d-none");
 
         console.log(response)
         /* current weather */
@@ -109,4 +134,12 @@ $("#search").on("click", function () {
 
 
     })
+};
+
+// event listeners for search bar and search history list 
+$("#search").on("click", function() {
+    fetchWeather($("#city-name").val());
+});
+$("#search-history").on("click", "li", function () {
+   fetchWeather($(this).text());
 })

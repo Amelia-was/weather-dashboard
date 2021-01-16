@@ -22,13 +22,13 @@
         <span class="oi oi-sun sun-header display-1 mr-3"></span>
         <div class="flex-column">
         <h1>Sunshine Cities</h1>
-        <h2>Quickly check the weather in any city!</h2>
+        <h2>Check the weather in any city!</h2>
         </div>
     </header>
 
-    <div class="d-flex flex-row">
+    <div class="d-flex flex-row w-25">
 
-            <menu class="p-2 align-self-stretch">
+            <menu class="p-2 align-self-stretch d-flex flex-column">
                 <p class="">Type the name of a city to see current weather data!</p>
                 <div class="d-flex flex-row">
                     <input type="text" class="" id="city-name">
@@ -36,14 +36,15 @@
                         <span class="oi oi-magnifying-glass"></span>
                     </button>
 
-                    <ul class="list-group">
+                </div>
+
+                    <ul class="list-group pt-2" id="search-history">
                     </ul>
 
-                </div>
             </menu>
 
             <main class="p-2">
-                <h3 class="p-2">Today in <span id="city"></span></h3>
+                <h3 class="p-2 d-none" id="today-in">Today in <span id="city"></span>:</h3>
                 <div class="today card rounded-3">
                     <div class="card-body">
                         <p class="card-text"></p>
@@ -59,7 +60,7 @@
 
                     </div>
                 </div>
-                <h4 class="p-2">5 Day Forecast</h4>
+                <h4 class="p-2 d-none" id="5-day-fcast">5 Day Forecast</h4>
                 <div class="d-flex flex-row">
                     <div class="card" id="day1">
                         <div class="card-body">

@@ -75,12 +75,15 @@ menu {
 }
 
 .today {
-    font-size: 36px;
     background: var(--blue);
 }
 
 .oi-sun {
     color: var(--yellow);
+}
+
+.sun-header {
+    color: var(--red);
 }
 
 .flex-fill {
@@ -89,4 +92,12 @@ menu {
 
 .card-text {
     color: black;
+}
+
+.list-group-item {
+    color: black;
+}
+
+.list-group-item:hover {
+    background-color: var(--yellow);
 }
