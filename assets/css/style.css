@@ -14,6 +14,7 @@ font-family: 'Righteous', cursive;
 :root  {
     --reddish: #e84855;
     --blue: #7f8bd0;
+    --blueSemi: rgba(127, 139, 208, 0.3);
     --yellow: #f9dc5c;
     --darkBlue: #403f4c;
     --lightBlue: #c7e8f3;
@@ -26,11 +27,16 @@ font-family: 'Righteous', cursive;
 body {
     background: var(--yellow);
     font-family: 'Archivo Black', Helvetica, Arial, sans-serif;
+    font-size: 1rem;
     color: ivory;
 }
 
 header {
-    background: var(--ivory);
+    background-color: var(--ivory);
+    background-size: 2rem 2rem;
+    background-image: 
+        linear-gradient(to right, var(--blueSemi) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--blueSemi) 1px, transparent 1px);
     color: var(--blue);
 }
 
