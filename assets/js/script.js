@@ -20,6 +20,8 @@ $("#search").on("click", function () {
         return response.json();
     })
     .then(function(response) {
+        $("#city").text(cityName);
+
         console.log(response)
         /* current weather */
         console.log(cityName);
@@ -51,11 +53,23 @@ $("#search").on("click", function () {
         console.log("Humidity: " + response.daily[1].humidity);
         console.log(response.daily[1].weather[0].main, response.daily[1].weather[0].description);
 
+        $("#day1-description").text(
+            response.daily[1].weather[0].main 
+            + ", " + response.daily[1].weather[0].description);
+        $("#day1-temp").text(response.daily[1].temp.day);
+        $("#day1-humidity").text("Humidity: " + response.daily[1].humidity);
+
         /* day 2 */
         console.log("Day 2");
         console.log("Temp: " + response.daily[2].temp.day);
         console.log("Humidity: " + response.daily[2].humidity);
         console.log(response.daily[2].weather[0].main, response.daily[2].weather[0].description);
+
+        $("#day2-description").text(
+            response.daily[2].weather[0].main
+            + ", " + response.daily[2].weather[0].description);
+        $("#day2-temp").text(response.daily[2].temp.day);
+        $("#day2-humidity").text("Humidity: " + response.daily[2].humidity);
 
         /* day 3 */
         console.log("Day 3");
@@ -63,17 +77,35 @@ $("#search").on("click", function () {
         console.log("Humidity: " + response.daily[3].humidity);
         console.log(response.daily[3].weather[0].main, response.daily[3].weather[0].description);
 
+        $("#day3-description").text(
+            response.daily[3].weather[0].main
+            + ", " + response.daily[3].weather[0].description);
+        $("#day3-temp").text(response.daily[3].temp.day);
+        $("#day3-humidity").text("Humidity: " + response.daily[3].humidity);
+
         /* day 4 */
         console.log("Day 4");
         console.log("Temp: " + response.daily[4].temp.day);
         console.log("Humidity: " + response.daily[4].humidity);
         console.log(response.daily[4].weather[0].main, response.daily[4].weather[0].description);
 
+        $("#day4-description").text(
+            response.daily[4].weather[0].main
+            + ", " + response.daily[4].weather[0].description);
+        $("#day4-temp").text(response.daily[4].temp.day);
+        $("#day4-humidity").text("Humidity: " + response.daily[4].humidity);
+
         /* day 5 */
         console.log("Day 5");
         console.log("Temp: " + response.daily[5].temp.day);
         console.log("Humidity: " + response.daily[5].humidity);
         console.log(response.daily[5].weather[0].main, response.daily[5].weather[0].description);
+
+        $("#day5-description").text(
+            response.daily[5].weather[0].main
+            + ", " + response.daily[5].weather[0].description);
+        $("#day5-temp").text(response.daily[5].temp.day);
+        $("#day5-humidity").text("Humidity: " + response.daily[5].humidity);
 
 
     })

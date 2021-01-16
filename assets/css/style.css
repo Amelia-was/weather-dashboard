@@ -86,3 +86,7 @@ menu {
 .flex-fill {
     flex: 1;
 }
+
+.card-text {
+    color: black;
+}
