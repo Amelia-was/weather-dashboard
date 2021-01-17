@@ -89,7 +89,7 @@ var fetchWeather = function (searchTerm) {
         console.log("Current temp: " + Math.round(response.current.temp));
         console.log("Humidity: " + response.current.humidity);
         console.log("UVI: " + response.current.uvi);
-        console.log("Wind speed: " + response.current.wind_speed + " " + response.current.wind_deg);
+        console.log("Wind speed: " + response.current.wind_speed + " " + "m/s");
         console.log("Sunrise time: " + response.current.sunrise);
         console.log("Sunset time: " + response.current.sunset);
 
@@ -99,12 +99,13 @@ var fetchWeather = function (searchTerm) {
             + response.current.weather[0].description);
         displayIcon((response.current.weather[0].id), "today-icon");
         $("#temp").text(Math.round(response.current.temp) + " °C");
-        $("#humidity").text("Humidity: " + response.current.humidity);
+        $("#humidity").text("Humidity: " + response.current.humidity + "%");
+        $("#wind").text("Wind speed: " + response.current.wind_speed + " " + "m/s");
         
         $("#uv").removeClass("uvi-good uvi-moderate uvi-severe")
         // UV Index
         var uvi = response.current.uvi;
-        $("#uv").text("UVI " + uvi);
+        $("#uv").text(uvi);
         if (uvi < 2) {
             $("#uv").addClass("uvi-good");
         }
@@ -115,10 +116,8 @@ var fetchWeather = function (searchTerm) {
             $("#uv").addClass("uvi-severe");
         }
         
-        $("#wind").text("Wind speed: " + response.current.wind_speed + " " + response.current.wind_deg);
         /*$("#sunrise").text("Sunrise time: " + response.current.sunrise);
         $("#sunset").text("Sunset time: " + response.current.sunset)*/
-        
         
 
         /* 5-day forecast */
@@ -129,12 +128,8 @@ var fetchWeather = function (searchTerm) {
         console.log(response.daily[1].weather[0].main, response.daily[1].weather[0].description);
 
         displayIcon((response.daily[1].weather[0].id), "day1-icon");
-        console.log(response.daily[1].weather[0].id);
-        $("#day1-description").text(
-            response.daily[1].weather[0].main 
-            + ", " + response.daily[1].weather[0].description);
         $("#day1-temp").text(Math.round(response.daily[1].temp.day) + " °C");
-        $("#day1-humidity").text("Humidity: " + response.daily[1].humidity);
+        $("#day1-humidity").text("Humidity: " + response.daily[1].humidity + "%");
 
         /* day 2 */
         console.log("Day 2");
@@ -143,12 +138,8 @@ var fetchWeather = function (searchTerm) {
         console.log(response.daily[2].weather[0].main, response.daily[2].weather[0].description);
 
         displayIcon((response.daily[2].weather[0].id), "day2-icon");
-        console.log(response.daily[2].weather[0].id);
-        $("#day2-description").text(
-            response.daily[2].weather[0].main
-            + ", " + response.daily[2].weather[0].description);
         $("#day2-temp").text(Math.round(response.daily[2].temp.day) + " °C");
-        $("#day2-humidity").text("Humidity: " + response.daily[2].humidity);
+        $("#day2-humidity").text("Humidity: " + response.daily[2].humidity + "%");
 
         /* day 3 */
         console.log("Day 3");
@@ -157,12 +148,8 @@ var fetchWeather = function (searchTerm) {
         console.log(response.daily[3].weather[0].main, response.daily[3].weather[0].description);
 
         displayIcon((response.daily[3].weather[0].id), "day3-icon");
-        console.log(response.daily[3].weather[0].id);
-        $("#day3-description").text(
-            response.daily[3].weather[0].main
-            + ", " + response.daily[3].weather[0].description);
         $("#day3-temp").text(Math.round(response.daily[3].temp.day) + " °C");
-        $("#day3-humidity").text("Humidity: " + response.daily[3].humidity);
+        $("#day3-humidity").text("Humidity: " + response.daily[3].humidity + "%");
 
         /* day 4 */
         console.log("Day 4");
@@ -171,12 +158,8 @@ var fetchWeather = function (searchTerm) {
         console.log(response.daily[4].weather[0].main, response.daily[4].weather[0].description);
 
         displayIcon((response.daily[4].weather[0].id), "day4-icon");
-        console.log(response.daily[4].weather[0].id);
-        $("#day4-description").text(
-            response.daily[4].weather[0].main
-            + ", " + response.daily[4].weather[0].description);
         $("#day4-temp").text(Math.round(response.daily[4].temp.day) + " °C");
-        $("#day4-humidity").text("Humidity: " + response.daily[4].humidity);
+        $("#day4-humidity").text("Humidity: " + response.daily[4].humidity + "%");
 
         /* day 5 */
         console.log("Day 5");
@@ -185,12 +168,8 @@ var fetchWeather = function (searchTerm) {
         console.log(response.daily[5].weather[0].main, response.daily[5].weather[0].description);
 
         displayIcon((response.daily[5].weather[0].id), "day5-icon");
-        console.log(response.daily[5].weather[0].id);
-        $("#day5-description").text(
-            response.daily[5].weather[0].main
-            + ", " + response.daily[5].weather[0].description);
         $("#day5-temp").text(Math.round(response.daily[5].temp.day) + " °C");
-        $("#day5-humidity").text("Humidity: " + response.daily[5].humidity);
+        $("#day5-humidity").text("Humidity: " + response.daily[5].humidity + "%");
 
 
     })
@@ -209,6 +188,7 @@ $("#search").on("click", function() {
 });
 
 $("#search-history").on("click", "li", function () {
+    $("#city").text($(this).text());
    fetchWeather($(this).text());
 })
 

@@ -67,7 +67,7 @@ h4 {
 
 menu {
     background: var(--blue) !important;
-    height: 100vw;
+    width: 20vw;
 }
 
 .container-fluid {
@@ -94,12 +94,23 @@ menu {
     color: black;
 }
 
+ul, .btn, btn:hover {
+    border: none;
+}
+
+.btn:hover {
+    background-color: var(--yellow);
+    transition: all 0.3s ease-in-out;
+}
+
 .list-group-item {
     color: black;
 }
 
 .list-group-item:hover {
     background-color: var(--yellow);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
 }
 
 .uvi-good {
@@ -118,4 +129,9 @@ menu {
     background-color: var(--red);
     border: 2px solid black;
     border-radius: 5px;
+}
+
+#today-icon i {
+    color: var(--ivory);
+    font-size: 4rem;
 }
