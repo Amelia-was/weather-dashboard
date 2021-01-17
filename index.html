@@ -13,6 +13,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bungee+Shade&family=Hammersmith+One&family=Righteous&display=swap"
         rel="stylesheet">
+    <script src="https://kit.fontawesome.com/715d22d8c7.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./assets/css/style.css">
     <title>☀ Weather</title>
 </head>
@@ -26,9 +27,9 @@
         </div>
     </header>
 
-    <div class="d-flex flex-row w-25">
+    <div class="d-flex flex-row">
 
-            <menu class="p-2 align-self-stretch d-flex flex-column">
+            <menu class="p-2 align-self-stretch d-flex flex-column w-25">
                 <p class="">Type the name of a city to see current weather data!</p>
                 <div class="d-flex flex-row">
                     <input type="text" class="" id="city-name">
@@ -37,6 +38,7 @@
                     </button>
 
                 </div>
+                <button id="clear">Clear search history</button>
 
                     <ul class="list-group pt-2" id="search-history">
                     </ul>
@@ -44,11 +46,16 @@
             </menu>
 
             <main class="p-2">
-                <h3 class="p-2 d-none" id="today-in">Today in <span id="city"></span>:</h3>
+                <div class="today-group d-none">
+                <h3 class="p-2" id="today-in">Today in <span id="city"></span></h3>
                 <div class="today card rounded-3">
                     <div class="card-body">
+                        <div id="today-icon">
+
+                        </div>
+
                         <p class="card-text"></p>
-                        <span class="oi oi-sun"></span>
+
                         <p id="todays-date"></p>
                         <p id="today-description"></p>
                         <p id="temp"></p>
@@ -60,53 +67,57 @@
 
                     </div>
                 </div>
+                </div>
+
                 <h4 class="p-2 d-none" id="5-day-fcast">5 Day Forecast</h4>
-                <div class="d-flex flex-row">
-                    <div class="card" id="day1">
+
+                <div class="cards d-none">
+
+                    <div class="card m-1" id="day1">
                         <div class="card-body">
-                        <p class="card-text">
-                            <span id="day1-temp"></span>
-                            <span id="day1-description"></span>
-                            <span id="day1-humidity"></span>
-                        </p>
+                            <div id="day1-icon"></div>
+                            <p class="card-text" id="day1-temp"></p>
+                            <p class="card-text" id="day1-description"></p>
+                            <p class="card-text" id="day1-humidity"></p>
                         </div>
                     </div>
-                    <div class="card" id="day2">
+
+                    <div class="card m-1" id="day2">
                         <div class="card-body">
-                        <p class="card-text">
-                            <span id="day2-temp"></span>
-                            <span id="day2-description"></span>
-                            <span id="day2-humidity"></span>
-                        </p>
+                            <div id="day2-icon"></div>
+                            <p class="card-text" id="day2-temp"></p>
+                            <p class="card-text" id="day2-description"></p>
+                            <p class="card-text" id="day2-humidity"></p>
                         </div>
                     </div>
-                    <div class="card" id="day3">
+
+                    <div class="card m-1" id="day3">
                         <div class="card-body">
-                        <p class="card-text">
-                            <span id="day3-temp"></span>
-                            <span id="day3-description"></span>
-                            <span id="day3-humidity"></span>
-                        </p>
+                            <div id="day3-icon"></div>
+                            <p class="card-text" id="day3-temp"></p>
+                            <p class="card-text" id="day3-description"></p>
+                            <p class="card-text" id="day3-humidity"></p>
                         </div>
                     </div>
-                    <div class="card" id="day4">
+
+                    <div class="card m-1" id="day4">
                         <div class="card-body">
-                        <p class="card-text">
-                            <span id="day4-temp"></span>
-                            <span id="day4-description"></span>
-                            <span id="day4-humidity"></span>
-                        </p>
+                            <div id="day4-icon"></div>
+                            <p class="card-text" id="day4-temp"></p>
+                            <p class="card-text" id="day4-description"></p>
+                            <p class="card-text" id="day4-humidity"></p>
                         </div>
                     </div>
-                    <div class="card" id="day5">
+
+                    <div class="card m-1" id="day5">
                         <div class="card-body">
-                        <p class="card-text">
-                            <span id="day5-temp"></span>
-                            <span id="day5-description"></span>
-                            <span id="day5-humidity"></span>
-                        </p>
+                            <div id="day5-icon"></div>
+                            <p class="card-text" id="day5-temp"></p>
+                            <p class="card-text" id="day5-description"></p>
+                            <p class="card-text" id="day5-humidity"></p>
                         </div>
                     </div>
+
                 </div>
             </main>
 

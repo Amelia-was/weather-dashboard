@@ -26,7 +26,7 @@ font-family: 'Righteous', cursive;
 
 body {
     background: var(--yellow);
-    font-family: 'Archivo Black', Helvetica, Arial, sans-serif;
+    /*font-family: 'Archivo Black', Helvetica, Arial, sans-serif;*/
     font-size: 1rem;
     color: ivory;
 }
@@ -90,7 +90,7 @@ menu {
     flex: 1;
 }
 
-.card-text {
+.card {
     color: black;
 }
 
@@ -100,4 +100,22 @@ menu {
 
 .list-group-item:hover {
     background-color: var(--yellow);
+}
+
+.uvi-good {
+    background-color: var(--blue);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.uvi-moderate {
+    background-color: var(--yellow);
+    border: 2px solid black;
+    border-radius: 5px;
+}
+
+.uvi-severe {
+    background-color: var(--red);
+    border: 2px solid black;
+    border-radius: 5px;
 }
