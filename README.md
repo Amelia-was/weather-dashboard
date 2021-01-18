@@ -7,7 +7,7 @@ Previously searched for cities are displyed in the search history, and weather d
 
 The layout was created with Bootstrap, with additional styling via custom CSS. JQuery ws used in combintion with javaScript. Date and time were managed with Moment.js.
 
-The page can be found [here](https://amelia-was.github.io/weather-dashbord/)
+The page can be found [here](https://amelia-was.github.io/weather-dashboard/)
 
 ![Weather Dashboard Screenshot](./assets/images/weather-dashboard-screenshot.png)
 
