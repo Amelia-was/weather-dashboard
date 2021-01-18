@@ -31,7 +31,7 @@ if (!searchHistory) {
 else {
     for (let i = 0; i < searchHistory.length; i++) {
         var cityListItemEl = $("<li></li>");
-        cityListItemEl.addClass("list-group-item p-2");
+        cityListItemEl.addClass("list-group-item p-2 mx-1 m-sm-0");
         cityListItemEl.text(searchHistory[i]);
         $(searchHistoryEl).append(cityListItemEl);
     }
@@ -67,7 +67,7 @@ var displayIcon = function (condition, elementId) {
     }
 }
 
-var fetchWeather = function (searchTerm) {
+var fetchWeather = function (searchTerm, isNewSearch) {
     var cityName = searchTerm;
     fetch("https://api.openweathermap.org/data/2.5/weather?&units=metric&q="
         + cityName + "&appid=61c9307a53a9d97b2af0939528ef8c0b")
@@ -80,12 +80,15 @@ var fetchWeather = function (searchTerm) {
                     $("#city").text(searchTerm);
 
                     // save in search history
-                    var cityListItemEl = $("<li class='list-group-item p-2'></li>");
-                    cityListItemEl.text(searchTerm);
-                    $(searchHistoryEl).append(cityListItemEl);
+                    // check if it is new search (not clicked from search history)
+                    if (isNewSearch) {
+                        var cityListItemEl = $("<li class='list-group-item p-2 mx-1 m-sm-0'></li>");
+                        cityListItemEl.text(searchTerm);
+                        $(searchHistoryEl).append(cityListItemEl);
 
-                    searchHistory.push(searchTerm);
-                    localStorage.setItem("search", JSON.stringify(searchHistory));
+                        searchHistory.push(searchTerm);
+                        localStorage.setItem("search", JSON.stringify(searchHistory));
+                    }
                 });
             } else {
                 alert("Error: " + response.statusText);
@@ -182,16 +185,17 @@ var displayWeather = function (response) {
 $("#search").on("click", function (event) {
     event.preventDefault();
     var cityName = $("#city-name").val();
-    fetchWeather(cityName);
+    fetchWeather(cityName, true);
 
     $("#city-name").val("")
 });
 
 $("#search-history").on("click", "li", function () {
     $("#city").text($(this).text());
-    fetchWeather($(this).text());
+    fetchWeather(($(this).text()), false);
 })
 
+// clear search history
 $("#clear").on("click", function () {
     $("#search-history").empty();
     searchHistory = [];

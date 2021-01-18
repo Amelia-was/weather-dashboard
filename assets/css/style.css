@@ -14,6 +14,7 @@
 }
 
 body {
+    /* royalty free image from pexels.com */
     background-image: url('../images/sky-bg.jpg');
     background-size: cover;
     background-attachment: fixed;
@@ -109,7 +110,7 @@ i {
 
 #today-icon i {
     color: var(--ivory);
-    font-size: 4rem;
+    font-size: 4em;
 }
 
 #temp {
@@ -122,6 +123,7 @@ i {
 }
 
 /* media queries */
+/* font sizes for small screens */
 @media only screen and (max-width: 575px) {
     h1 {
         font-size: 48px;
@@ -134,5 +136,8 @@ i {
     }
     #today-icon i {
     font-size: 2rem;
+    }
+    .list-group-item {
+        border-radius: 3px !important;
     }
 }
