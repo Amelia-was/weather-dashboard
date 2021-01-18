@@ -102,7 +102,6 @@ var fetchWeather = function (searchTerm, isNewSearch) {
 
 // search weather via Open Weather API
 var displayWeather = function (response) {
-    console.log(response)
     var lat = response.coord.lat;
     var lon = response.coord.lon;
     fetch(
@@ -118,7 +117,6 @@ var displayWeather = function (response) {
                     $(".cards").removeClass("d-none");
                     $(".cards").addClass("d-flex flex-row flex-wrap")
 
-                    console.log(response)
                     /* current weather */
                     $("#today-description").text(response.current.weather[0].description);
                     displayIcon((response.current.weather[0].id), "today-icon");
