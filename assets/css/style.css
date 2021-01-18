@@ -4,98 +4,70 @@
     box-sizing: border-box;
 }
 
-/*
-font-family: 'Archivo Black', sans-serif;
-font-family: 'Bungee Shade', cursive;
-font-family: 'Hammersmith One', sans-serif;
-font-family: 'Righteous', cursive;
-*/
-
 :root  {
-    --reddish: #e84855;
-    --blue: #7f8bd0;
-    --blueSemi: rgba(127, 139, 208, 0.3);
-    --yellow: #f9dc5c;
+    --blue: #607890;
+    --blue80: rgba(96, 120, 144, 0.8);
+    --yellow: #efd280;
     --darkBlue: #403f4c;
-    --lightBlue: #c7e8f3;
-    --darkGrey: #302f3a;
-    --ivory: #FFFFF2;
-    --medBlue: #3f7cac;
+    --ivory: #fefefe;
     --red: #de6449;
 }
 
 body {
-    background: var(--yellow);
-    /*font-family: 'Archivo Black', Helvetica, Arial, sans-serif;*/
-    font-size: 1rem;
-    color: ivory;
+    background-image: url('../images/sky-bg.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    font-family: Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    color: var(--darkBlue);
 }
 
 header {
-    background-color: var(--ivory);
-    background-size: 2rem 2rem;
-    background-image: 
-        linear-gradient(to right, var(--blueSemi) 1px, transparent 1px),
-        linear-gradient(to bottom, var(--blueSemi) 1px, transparent 1px);
-    color: var(--blue);
-}
-
-.header-sun {
-    color: var(--red);
-    font-size: 25rem;
+    background-color: rgba(0, 0, 0, 0.3);
+    color: var(--yellow);
+    box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
 }
 
 h1 {
-    font-family: 'Bungee Shade', cursive;
     font-size: 64px;
+    font-weight: bold;
 }
 
 h2 {
-    font-family: 'Hammersmith One', sans-serif;
-    color: black;
+    font-size: 36px;
 }
 
 h3 {
-    font-size: 36px;
-    font-family: 'Righteous', cursive;
+    font-size: 24px;
 }
 
 h4 {
-    font-size: 24px;
-    font-family: 'Hammersmith One', sans-serif;
+    color: var(--darkBlue);
 }
 
 menu {
-    background: var(--blue) !important;
-    width: 20vw;
+    background: var(--blue80);
 }
 
-.container-fluid {
-    height: 100vw;
+
+main, label, h2, h3, #humidity, #wind, #today-description, .uvi {
+    color: var(--ivory) !important;
 }
 
 .today {
-    background: var(--blue);
-}
-
-.oi-sun {
-    color: var(--yellow);
-}
-
-.sun-header {
-    color: var(--red);
-}
-
-.flex-fill {
-    flex: 1;
+    background: var(--blue80);
+    color: var(--ivory);
+    max-width: 575px;
 }
 
 .card {
-    color: black;
+    color: var(--darkBlue);
+    background-color: var(--blue80);
 }
 
 ul, .btn, btn:hover {
     border: none;
+    font-size: 1em;
 }
 
 .btn:hover {
@@ -103,35 +75,64 @@ ul, .btn, btn:hover {
     transition: all 0.3s ease-in-out;
 }
 
-.list-group-item {
-    color: black;
+.list-group-item, #search {
+    background-color: var(--yellow);
 }
 
-.list-group-item:hover {
-    background-color: var(--yellow);
+.list-group-item:hover, #search:hover {
+    background-color: ivory;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
 }
 
 .uvi-good {
     background-color: var(--blue);
-    border: 2px solid black;
+    border: 1px solid var(--ivory);
     border-radius: 5px;
 }
 
 .uvi-moderate {
     background-color: var(--yellow);
-    border: 2px solid black;
+    border: 1px solid var(--ivory);
     border-radius: 5px;
 }
 
 .uvi-severe {
     background-color: var(--red);
-    border: 2px solid black;
+    border: 1px solid var(--ivory);
     border-radius: 5px;
+}
+
+i {
+    font-size: 2em;
 }
 
 #today-icon i {
     color: var(--ivory);
     font-size: 4rem;
+}
+
+#temp {
+    color: var(--ivory);
+    font-size: 6em;
+}
+
+#clear {
+    max-height: max-content;
+}
+
+/* media queries */
+@media only screen and (max-width: 575px) {
+    h1 {
+        font-size: 48px;
+    }
+    h2, h3 {
+        font-size: 20px;
+    }
+    #temp {
+        font-size: 4em;
+    }
+    #today-icon i {
+    font-size: 2rem;
+    }
 }

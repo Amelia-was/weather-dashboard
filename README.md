@@ -1,5 +1,5 @@
 # Weather Dashboard
-A simple weather app. Users can search the name of a city, and current weather data including temperature, humidity, UV Index, wind speed, and sunrise/set time will be displayed. An icon indicates general weather conditions.
+A simple weather app. Users can search the name of a city, and current weather data including temperature, humidity, UV Index, and wind speed will be displayed. An icon indicates general weather conditions.
 
 Along with current weather data, a 5-day forecast is displayed containing temperature, humdidity and a description of weather conditions.
 
