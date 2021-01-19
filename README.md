@@ -5,7 +5,7 @@ Along with current weather data, a 5-day forecast is displayed containing temper
 
 Previously searched for cities are displyed in the search history, and weather data for those cities can be searched for again by clicking on the city name in the search history.
 
-The layout was created with Bootstrap, with additional styling via custom CSS. JQuery ws used in combintion with javaScript. Date and time were managed with Moment.js.
+The layout was created with Bootstrap, with additional styling via custom CSS. JQuery was used in combintion with javaScript. Date and time were managed with Moment.js.
 
 The page can be found [here](https://amelia-was.github.io/weather-dashboard/)
 
